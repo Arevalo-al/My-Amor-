@@ -1,0 +1,1366 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#250016">
+<title>Mi Amor ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --wine: #762b3b;
+  --wine-light: #a34257;
+  --cream: #fbf7f0;
+  --paper: #f4ede3;
+  --ink: #382b29;
+  --muted: #a28d86;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #a90060 0%, transparent 50%),
+    linear-gradient(145deg, #250016, #090309 65%, #1c0012);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 12px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* CORAZONES */
+
+.heart {
+  position: fixed;
+  bottom: -60px;
+  color: #ff168c;
+  font-size: 25px;
+  opacity: 0;
+  pointer-events: none;
+  animation: floatHeart linear infinite;
+  text-shadow: 0 0 12px #ff168c, 0 0 25px #ff168c;
+  z-index: 0;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(0) scale(.7);
+    opacity: 0;
+  }
+  15%, 80% { opacity: .7; }
+  100% {
+    transform: translateY(-115vh) rotate(35deg) scale(1.3);
+    opacity: 0;
+  }
+}
+
+.heart:nth-child(1) { left: 5%; animation-duration: 12s; }
+.heart:nth-child(2) { left: 20%; animation-duration: 16s; animation-delay: 2s; }
+.heart:nth-child(3) { left: 38%; animation-duration: 13s; animation-delay: 5s; }
+.heart:nth-child(4) { left: 58%; animation-duration: 17s; animation-delay: 1s; }
+.heart:nth-child(5) { left: 76%; animation-duration: 14s; animation-delay: 4s; }
+.heart:nth-child(6) { left: 91%; animation-duration: 18s; animation-delay: 3s; }
+
+.glow {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #ff008c;
+  filter: blur(100px);
+  opacity: .18;
+  pointer-events: none;
+}
+
+.glow.one { top: 5%; left: -70px; }
+.glow.two { bottom: 5%; right: -70px; }
+
+/* REVISTA */
+
+.mobile-magazine {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: min(96vw, 1250px);
+  height: min(86vh, 850px);
+  height: min(86svh, 850px);
+  min-height: 620px;
+  background: var(--cream);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 0 35px rgba(255,0,130,.22),
+    0 25px 70px rgba(0,0,0,.75);
+  animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* PORTADA IZQUIERDA */
+
+.left-page {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(to top, rgba(15,5,8,.88), rgba(15,5,8,.08)),
+    url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=85&w=1200&auto=format&fit=crop') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 35px;
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.left-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,.25));
+  pointer-events: none;
+}
+
+.vertical-brand {
+  position: absolute;
+  right: 12px;
+  top: 20px;
+  writing-mode: vertical-rl;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.75);
+  letter-spacing: 7px;
+  z-index: 1;
+}
+
+.left-small-text {
+  position: absolute;
+  top: 25px;
+  left: 22px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #e6c8ae;
+  font-size: 10px;
+  letter-spacing: 4px;
+  z-index: 2;
+}
+
+.hero-caption {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-caption h1 {
+  font-family: 'Great Vibes', cursive;
+  color: #e9a6b0;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 400;
+  text-shadow: 0 2px 10px #000;
+}
+
+.hero-caption p {
+  color: #f5e6dd;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  margin-top: 8px;
+}
+
+/* PÁGINA DERECHA */
+
+.right-page {
+  background:
+    radial-gradient(ellipse at top right, #fffdf8, transparent 55%),
+    var(--cream);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-content {
+  min-width: 0;
+  min-height: 0;
+  padding: 32px 30px 25px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #b77c81 transparent;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-content::-webkit-scrollbar { width: 5px; }
+
+.page-content::-webkit-scrollbar-thumb {
+  background: #b77c81;
+  border-radius: 5px;
+}
+
+/* MÚSICA */
+
+.music-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #f0e7dd;
+  border-radius: 25px;
+  border: 1px solid #e6d8ca;
+  box-shadow: 0 3px 10px rgba(70,30,30,.07);
+  margin-bottom: 20px;
+  transition: .3s ease;
+}
+
+.music-bar:has(.music-btn.playing) {
+  background: #f4e5e5;
+  box-shadow: 0 4px 16px rgba(118,43,59,.13);
+}
+
+.music-info { min-width: 0; }
+
+.music-info strong {
+  display: block;
+  color: var(--wine);
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.music-info span {
+  display: block;
+  color: #927b75;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-btn {
+  flex-shrink: 0;
+  background: var(--wine);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 16px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.music-btn:hover {
+  background: var(--wine-light);
+  transform: scale(1.05);
+}
+
+.music-btn.playing { background: var(--wine-light); }
+
+/* FRASE */
+
+.top-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 19px;
+  text-align: right;
+  color: #987c75;
+  padding: 0 5px 16px;
+  border-bottom: 1px solid #e9ddd2;
+  margin-bottom: 22px;
+}
+
+/* PESTAÑAS */
+
+.nav-tabs-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid #e8dcd0;
+  background: #f4ece2;
+  min-height: 0;
+}
+
+.tab-btn {
+  flex: 1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: #8e7770;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: .3s;
+  padding: 12px 0;
+}
+
+.tab-btn:hover {
+  color: var(--wine);
+  background: rgba(118,43,59,.05);
+}
+
+.tab-btn.active {
+  color: var(--wine);
+  border-left: 4px solid var(--wine);
+  font-weight: 600;
+  background: linear-gradient(
+    90deg,
+    rgba(118,43,59,.10),
+    rgba(118,43,59,.015)
+  );
+}
+
+.tab-btn:focus-visible,
+.music-btn:focus-visible {
+  outline: 2px solid var(--wine-light);
+  outline-offset: -3px;
+}
+
+/* PANELES */
+
+.content-panel { display: none; }
+
+.content-panel.active {
+  display: block;
+  animation: pageReveal .55s ease both;
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.section-tag {
+  font-family: 'Cinzel', serif;
+  color: var(--wine);
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  margin-bottom: 8px;
+}
+
+.section-tag::after {
+  content: " ♥";
+  color: #b77c81;
+  font-size: 10px;
+}
+
+.section-subtag {
+  color: #a18b82;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e6d9cf;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.script-name {
+  font-family: 'Great Vibes', cursive;
+  color: #3c292b;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+  text-shadow: 1px 2px 8px rgba(118,43,59,.10);
+}
+
+.desc-text {
+  color: #735d56;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+/* DETALLES */
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+  background: rgba(239,229,217,.65);
+  border: 1px solid #e8dcd0;
+  padding: 16px;
+  border-radius: 9px;
+  gap: 10px;
+}
+
+.row-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px dashed #ddcfc3;
+  padding-bottom: 9px;
+  font-size: 12px;
+}
+
+.row-item:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+
+.row-item span:first-child {
+  color: #9b8179;
+  font-size: 10px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.row-item span:last-child {
+  color: #483431;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* NOTAS */
+
+.love-note {
+  background: #efe1dc;
+  border-left: 4px solid #9a4354;
+  border-radius: 4px;
+  padding: 18px;
+  margin-top: 18px;
+  box-shadow: 0 4px 14px rgba(90,40,45,.06);
+  transition: transform .3s ease;
+}
+
+.love-note:hover { transform: translateY(-2px); }
+
+.love-note small {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: var(--wine);
+  letter-spacing: 1.5px;
+}
+
+.love-note p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #775d58;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* FOTOGRAFÍAS */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 18px 0;
+}
+
+.photo-card {
+  min-width: 0;
+  background: white;
+  padding: 8px 8px 16px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.12);
+  border: 1px solid #eee5dc;
+  transform: rotate(-2deg);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.photo-card:nth-child(2) { transform: rotate(2deg); }
+
+.photo-card:hover {
+  transform: translateY(-5px) rotate(0);
+  box-shadow: 0 10px 22px rgba(0,0,0,.17);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.photo-card p {
+  font-family: 'Great Vibes', cursive;
+  font-size: 23px;
+  text-align: center;
+  color: var(--wine);
+  margin-top: 5px;
+}
+
+/* PROMESAS */
+
+.promise-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.promise-list li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  color: #644a45;
+  background: #f0e7de;
+  border-radius: 6px;
+  padding: 12px;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.promise-list li:hover {
+  transform: translateX(4px);
+  background: #eadbd5;
+}
+
+.promise-list li::before {
+  content: "♥ ";
+  color: #a33e54;
+}
+
+/* PIE */
+
+.footer-note {
+  text-align: center;
+  color: #a58c83;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 25px;
+  padding: 12px 0 20px;
+}
+
+/* CORAZÓN DECORATIVO */
+
+.little-heart {
+  position: absolute;
+  right: 18px;
+  bottom: 25px;
+  color: #9e364a;
+  font-size: 26px;
+  animation: beat 1.5s infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+/* TABLET */
+
+@media (min-width: 481px) and (max-width: 850px) {
+  .mobile-magazine {
+    width: 96vw;
+    height: 85svh;
+    min-height: 580px;
+    grid-template-columns: 38% 62%;
+  }
+
+  .page-content { padding: 22px 18px; }
+
+  .right-page { grid-template-columns: minmax(0, 1fr) 42px; }
+
+  .script-name { font-size: 3.3rem; }
+
+  .desc-text { font-size: 18px; }
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 12px 6px 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /*
+    CAMBIO IMPORTANTE:
+    La revista ya no tiene una altura fija.
+    Crece con todo el contenido de cada sección.
+  */
+
+  .mobile-magazine {
+    width: 97vw;
+    height: auto;
+    min-height: 86svh;
+    grid-template-columns: 36% 64%;
+    border-radius: 14px;
+    overflow: hidden;
+    align-items: stretch;
+  }
+
+  .left-page {
+    min-height: 86svh;
+    padding: 13px;
+  }
+
+  .vertical-brand {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    right: 2px;
+    top: 12px;
+    letter-spacing: 2px;
+  }
+
+  .left-small-text {
+    font-size: 7px;
+    left: 7px;
+    top: 12px;
+    letter-spacing: 2px;
+  }
+
+  .hero-caption h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .hero-caption p {
+    font-size: 7px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+
+  .right-page {
+    min-height: 86svh;
+    grid-template-columns: minmax(0, 1fr) 34px;
+    overflow: visible;
+    align-items: stretch;
+  }
+
+  /*
+    El contenido se expande naturalmente.
+    El desplazamiento lo hace ahora la pantalla.
+  */
+
+  .page-content {
+    height: auto;
+    min-height: 86svh;
+    overflow: visible;
+    padding: 17px 11px 25px;
+    touch-action: pan-y;
+  }
+
+  .music-bar {
+    padding: 10px 9px;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+
+  .music-info strong {
+    font-size: 8px;
+    letter-spacing: .7px;
+  }
+
+  .music-info span { font-size: 13px; }
+
+  .music-btn {
+    padding: 8px 9px;
+    font-size: 9px;
+  }
+
+  .top-quote {
+    font-size: 15px;
+    padding-bottom: 12px;
+    margin-bottom: 17px;
+  }
+
+  .tab-btn {
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 8px 0;
+  }
+
+  .section-tag {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .section-subtag {
+    font-size: 8px;
+    letter-spacing: .8px;
+    padding-bottom: 9px;
+    margin-bottom: 14px;
+  }
+
+  .script-name {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    margin-bottom: 13px;
+  }
+
+  .desc-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .details-list {
+    padding: 11px;
+    gap: 8px;
+  }
+
+  .row-item {
+    font-size: 10px;
+    gap: 5px;
+    padding-bottom: 7px;
+  }
+
+  .row-item span:first-child {
+    font-size: 8px;
+    letter-spacing: .3px;
+  }
+
+  .row-item span:last-child { font-size: 10px; }
+
+  .love-note {
+    padding: 12px;
+    margin-top: 13px;
+  }
+
+  .love-note small {
+    font-size: 8px;
+    letter-spacing: .8px;
+  }
+
+  .love-note p {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .photo-grid {
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .photo-card { padding: 5px 5px 10px; }
+
+  .photo-card:hover { transform: none; }
+
+  .photo-card img { height: 95px; }
+
+  .photo-card p { font-size: 17px; }
+
+  .promise-list {
+    gap: 8px;
+    margin-top: 13px;
+  }
+
+  .promise-list li {
+    font-size: 16px;
+    padding: 9px;
+  }
+
+  .footer-note {
+    font-size: 7px;
+    letter-spacing: 1px;
+    margin-top: 18px;
+    padding-bottom: 15px;
+  }
+
+  .little-heart {
+    right: 10px;
+    bottom: 15px;
+    font-size: 20px;
+  }
+}
+
+/* CELULARES MUY PEQUEÑOS */
+
+@media (max-width: 350px) {
+  .mobile-magazine {
+    grid-template-columns: 33% 67%;
+    min-height: 86svh;
+  }
+
+  .left-page { min-height: 86svh; }
+
+  .right-page { grid-template-columns: minmax(0, 1fr) 30px; }
+
+  .page-content { padding: 13px 8px 25px; }
+
+  .script-name { font-size: 1.9rem; }
+
+  .music-info strong { font-size: 7px; }
+
+  .tab-btn { font-size: 7px; }
+}
+
+/* PANTALLAS BAJAS */
+
+@media (max-height: 650px) and (min-width: 481px) {
+  body { align-items: flex-start; }
+
+  .mobile-magazine { height: 620px; }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .heart { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CORAZONES DEL FONDO -->
+
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<!-- REVISTA -->
+
+<main class="mobile-magazine">
+
+  <!-- PORTADA -->
+
+  <section class="left-page">
+
+    <div class="left-small-text">
+      UNA HISTORIA ESCRITA CON AMOR
+    </div>
+
+    <div class="vertical-brand">
+      MI AMOR
+    </div>
+
+    <div class="hero-caption">
+      <h1>Nosotros</h1>
+      <p>FELIZ 4 MESES • POR SIEMPRE</p>
+    </div>
+
+  </section>
+
+  <!-- PÁGINA DE CONTENIDO -->
+
+  <section class="right-page">
+
+    <div class="page-content">
+
+      <!-- REPRODUCTOR -->
+
+      <div class="music-bar">
+
+        <div class="music-info">
+          <strong>♡ NUESTRA CANCIÓN</strong>
+          <span>La melodía de nuestro amor...</span>
+        </div>
+
+        <button
+          class="music-btn"
+          id="btn-music"
+          type="button"
+          aria-label="Reproducir canción">
+          ▶ PLAY
+        </button>
+
+      </div>
+
+      <audio id="audio-player" loop preload="auto">
+  <source src="fonseca.mp3" type="audio/mpeg">
+</audio>
+
+      <div class="top-quote">
+        "Contigo aprendí que el amor verdadero sí existe."
+      </div>
+
+      <!-- NOSOTROS -->
+
+      <div
+        class="content-panel active"
+        id="panel-nosotros"
+        role="tabpanel"
+        aria-labelledby="tab-nosotros">
+
+        <div class="section-tag">EL AMOR DE MI VIDA</div>
+
+        <div class="section-subtag">
+          Nuestra historia • Mi refugio • Mi felicidad
+        </div>
+
+        <div class="script-name">Mi Persona Favorita</div>
+
+        <div class="details-list">
+
+          <div class="row-item">
+            <span>Celebración</span>
+            <span>4 Meses</span>
+          </div>
+
+          <div class="row-item">
+            <span>Lugar favorito</span>
+            <span>Siempre a tu lado</span>
+          </div>
+
+          <div class="row-item">
+            <span>Tiempo juntos</span>
+            <span>El mejor de mi vida</span>
+          </div>
+
+          <div class="row-item">
+            <span>Tu rol</span>
+            <span>Mi hogar y compañía</span>
+          </div>
+
+          <div class="row-item">
+            <span>Mi promesa</span>
+            <span>Amarte cada día más</span>
+          </div>
+
+          <div class="row-item">
+            <span>Destino</span>
+            <span>Toda una vida juntos</span>
+          </div>
+
+        </div>
+
+        <div class="love-note">
+          <small>DESDE EL PRIMER INSTANTE</small>
+
+          <p>
+            Desde el momento en que llegaste a mi vida,
+            todo cobró un nuevo sentido. Tu sonrisa iluminó
+            mis días y tu ternura convirtió cada instante
+            cotidiano en un recuerdo inolvidable.
+          </p>
+        </div>
+
+        <p class="desc-text" style="margin-top:15px">
+          Feliz 4 Meses, mi amor. Hoy celebramos un
+          capítulo más de nuestra historia, una historia
+          escrita con risas y muchísimo amor.
+        </p>
+
+      </div>
+
+      <!-- ESENCIA -->
+
+      <div
+        class="content-panel"
+        id="panel-esencia"
+        role="tabpanel"
+        aria-labelledby="tab-esencia"
+        hidden>
+
+        <div class="section-tag">LO QUE ME ENAMORA</div>
+
+        <div class="section-subtag">
+          Cada detalle de ti es especial
+        </div>
+
+        <div class="script-name">Tu Esencia</div>
+
+        <p class="desc-text">
+          Contigo aprendí que el amor verdadero sí existe.
+          Eres la persona más maravillosa que ha llegado
+          a mi mundo, y cada latido de mi corazón te pertenece.
+        </p>
+
+        <div class="love-note">
+          <small>LO QUE MÁS AMO DE TI</small>
+
+          <p>
+            Amo tu sonrisa, tu forma de hablar, tus ocurrencias,
+            tu ternura y esa manera tan tuya de hacer que
+            cualquier día se convierta en uno especial.
+          </p>
+        </div>
+
+        <div class="details-list" style="margin-top:15px">
+
+          <div class="row-item">
+            <span>Tu sonrisa</span>
+            <span>Mi luz favorita</span>
+          </div>
+
+          <div class="row-item">
+            <span>Tu mirada</span>
+            <span>Mi lugar seguro</span>
+          </div>
+
+          <div class="row-item">
+            <span>Tu corazón</span>
+            <span>Mi mayor regalo</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- DETALLES -->
+
+      <div
+        class="content-panel"
+        id="panel-detalles"
+        role="tabpanel"
+        aria-labelledby="tab-detalles"
+        hidden>
+
+        <div class="section-tag">NUESTROS RECUERDOS</div>
+
+        <div class="section-subtag">
+          Pequeños instantes, grandes historias
+        </div>
+
+        <div class="script-name">Complicidad</div>
+
+        <p class="desc-text">
+          Cada risa compartida, cada mirada y cada conversación
+          hacen que reafirme que eres la persona correcta
+          para compartir mi vida.
+        </p>
+
+        <div class="photo-grid">
+
+          <div class="photo-card">
+            <img src="foto1.jpg" alt="Nuestro recuerdo" loading="lazy">
+            <p>Un momento</p>
+          </div>
+
+          <div class="photo-card">
+            <img src="foto2.jpg" alt="Nuestro recuerdo" loading="lazy">
+            <p>Para siempre</p>
+          </div>
+
+        </div>
+
+        <div class="love-note">
+          <small>CADA RECUERDO CUENTA</small>
+
+          <p>
+            No necesito momentos perfectos, solo momentos
+            contigo. Porque hasta lo más sencillo se vuelve
+            extraordinario cuando estoy a tu lado.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PROMESAS -->
+
+      <div
+        class="content-panel"
+        id="panel-promesas"
+        role="tabpanel"
+        aria-labelledby="tab-promesas"
+        hidden>
+
+        <div class="section-tag">NUESTRO FUTURO</div>
+
+        <div class="section-subtag">
+          Un amor que quiero cuidar siempre
+        </div>
+
+        <div class="script-name">Por Siempre</div>
+
+        <p class="desc-text">
+          Te prometo cuidarte, escucharte, apoyarte en tus
+          sueños y construir juntos un futuro lleno de
+          momentos mágicos y amor sincero.
+        </p>
+
+        <ul class="promise-list">
+
+          <li>Elegirte incluso en los días difíciles.</li>
+
+          <li>Respetar tus sueños y acompañarte.</li>
+
+          <li>Hacerte sonreír siempre que pueda.</li>
+
+          <li>Cuidar lo bonito que estamos construyendo.</li>
+
+          <li>Recordarte lo mucho que significas para mí.</li>
+
+        </ul>
+
+        <div class="love-note">
+          <small>MI PROMESA MÁS GRANDE</small>
+
+          <p>
+            No prometo que todos los días sean perfectos.
+            Prometo que quiero seguir construyendo contigo
+            una historia llena de amor.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PIE DE PÁGINA -->
+
+      <div class="footer-note">
+        HECHO CON TODO MI AMOR PARA TI ♥
+      </div>
+
+    </div>
+
+    <!-- MENÚ VERTICAL -->
+
+    <nav
+      class="nav-tabs-bar"
+      role="tablist"
+      aria-label="Secciones de nuestra revista">
+
+      <button
+        class="tab-btn active"
+        type="button"
+        role="tab"
+        id="tab-nosotros"
+        aria-controls="panel-nosotros"
+        aria-selected="true"
+        tabindex="0"
+        onclick="showTab('nosotros', this)">
+        NOSOTROS
+      </button>
+
+      <button
+        class="tab-btn"
+        type="button"
+        role="tab"
+        id="tab-esencia"
+        aria-controls="panel-esencia"
+        aria-selected="false"
+        tabindex="-1"
+        onclick="showTab('esencia', this)">
+        ESENCIA
+      </button>
+
+      <button
+        class="tab-btn"
+        type="button"
+        role="tab"
+        id="tab-detalles"
+        aria-controls="panel-detalles"
+        aria-selected="false"
+        tabindex="-1"
+        onclick="showTab('detalles', this)">
+        DETALLES
+      </button>
+
+      <button
+        class="tab-btn"
+        type="button"
+        role="tab"
+        id="tab-promesas"
+        aria-controls="panel-promesas"
+        aria-selected="false"
+        tabindex="-1"
+        onclick="showTab('promesas', this)">
+        PROMESAS
+      </button>
+
+    </nav>
+
+    <div class="little-heart">♥</div>
+
+  </section>
+
+</main>
+
+<script>
+
+// ==================================
+// REPRODUCTOR DE MÚSICA
+// ==================================
+
+const audio = document.getElementById('audio-player');
+const btnMusic = document.getElementById('btn-music');
+
+function updateMusicButton() {
+
+  if (audio.paused) {
+    btnMusic.textContent = '▶ PLAY';
+    btnMusic.classList.remove('playing');
+    btnMusic.setAttribute('aria-label', 'Reproducir canción');
+  } else {
+    btnMusic.textContent = 'Ⅱ PAUSE';
+    btnMusic.classList.add('playing');
+    btnMusic.setAttribute('aria-label', 'Pausar canción');
+  }
+
+}
+
+btnMusic.addEventListener('click', async () => {
+
+  if (audio.paused) {
+
+    try {
+      await audio.play();
+      updateMusicButton();
+
+    } catch (error) {
+      btnMusic.textContent = '▶ REINTENTAR';
+
+      alert(
+        'No se pudo reproducir la canción. Comprueba que fonseca.mp3 esté en la misma carpeta que tu página.'
+      );
+    }
+
+  } else {
+
+    audio.pause();
+    updateMusicButton();
+
+  }
+
+});
+
+audio.addEventListener('play', updateMusicButton);
+audio.addEventListener('pause', updateMusicButton);
+audio.addEventListener('ended', updateMusicButton);
+
+
+// ==================================
+// CAMBIO DE PESTAÑAS
+// ==================================
+
+function showTab(tabId, element) {
+
+  const selectedPanel = document.getElementById('panel-' + tabId);
+
+  if (!selectedPanel || !element) return;
+
+  const panels = document.querySelectorAll('.content-panel');
+  const buttons = document.querySelectorAll('.tab-btn');
+
+  panels.forEach(panel => {
+    panel.classList.remove('active');
+    panel.hidden = true;
+  });
+
+  buttons.forEach(button => {
+    button.classList.remove('active');
+    button.setAttribute('aria-selected', 'false');
+    button.setAttribute('tabindex', '-1');
+  });
+
+  selectedPanel.hidden = false;
+
+  // Reiniciar animación
+
+  void selectedPanel.offsetWidth;
+
+  selectedPanel.classList.add('active');
+
+  element.classList.add('active');
+  element.setAttribute('aria-selected', 'true');
+  element.setAttribute('tabindex', '0');
+
+  // Volver al inicio de la sección
+
+  const pageContent = document.querySelector('.page-content');
+
+  pageContent.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+  // En móvil, también vuelve al comienzo de la revista
+
+  if (window.innerWidth <= 480) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+}
+
+
+// ==================================
+// NAVEGACIÓN CON TECLADO
+// ==================================
+
+const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+
+tabButtons.forEach((button, index) => {
+
+  button.addEventListener('keydown', event => {
+
+    let nextIndex = index;
+
+    if (
+      event.key === 'ArrowDown' ||
+      event.key === 'ArrowRight'
+    ) {
+      nextIndex = (index + 1) % tabButtons.length;
+
+    } else if (
+      event.key === 'ArrowUp' ||
+      event.key === 'ArrowLeft'
+    ) {
+      nextIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+
+    tabButtons[nextIndex].focus();
+    tabButtons[nextIndex].click();
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
